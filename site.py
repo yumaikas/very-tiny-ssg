@@ -123,16 +123,12 @@ class ArticleSeries:
                 echo(f'<h2><a href="/posts/{a.metadata["slug"]}.html">{a.title}</a></h2>')
             html_footer(f)
 
-
-
 def example_blog():
+    # Before doing this, make sure to create publish and publish/posts directories
     main_articles = ArticleSeries("Test Blog")
     main_articles.load_articles("~/JD/30-39.Writing/30.03.Obsidian/Testing")
-    print(main_articles.articles)
     main_articles.render_to("./publish/posts")
     main_articles.index_at("./publish/index.html")
 
+# example_blog()
 
-example_blog()
-
-print(random())
